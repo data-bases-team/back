@@ -11,16 +11,24 @@
 <table>
 <tr>
     <th>name</th>
+    <th>description</th>
     <th>price</th>
     <th>gramms</th>
     <th>cals</th>
+    <th>image</th>
 </tr>
     {% for q in all %}
 <tr>
     <td>{{ q.name }}</td>
-    <td>{{ q.price }}</td>
+    <td>{{ q.description }}</td>
     <td>{{ q.gramms }}</td>
     <td>{{ q.calories }}</td>
+    <td>{{ q.price }}</td>
+    {% if q.image %}
+    <img src ='{{q.image.url}}'
+    width=90>
+    {% endif %}
+
 </tr>
 
 {% endfor %}
