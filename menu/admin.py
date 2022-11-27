@@ -8,6 +8,6 @@ class itemsAdmin(admin.ModelAdmin):
     ordering = ('section',)
     search_fields = ('name', 'description',)
     list_filter = ('name', 'price', 'section',)
-    fields = (('name','section'), 'description', ('gramms', 'calories'), 'price')
+    fields = (('name','section'), 'description', ('gramms', 'calories'), 'price', 'image')
 
 admin.site.register(menuSections)

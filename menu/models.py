@@ -20,6 +20,7 @@ class items(models.Model):
     price = models.IntegerField()
     gramms = models.IntegerField(default=None, blank=True, null=True)
     calories = models.IntegerField(default=None, blank=True, null=True)
+    image = models.ImageField(null=True, blank=True, upload_to='images/')
 
     def __str__(self):
         return self.name
