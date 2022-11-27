@@ -21,6 +21,9 @@ class items(models.Model):
     gramms = models.IntegerField(default=None, blank=True, null=True)
     calories = models.IntegerField(default=None, blank=True, null=True)
     image = models.ImageField(null=True, blank=True, upload_to='images/')
+    def admin_image(self):
+        return '<img src="%s"/>' % self.image
+    admin_image.allow_tags = True
 
     def __str__(self):
         return self.name
