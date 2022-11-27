@@ -1,0 +1,29 @@
+{% extends "header.html" %}
+
+{% block content %} 
+
+{% load crispy_forms_tags %}    
+
+{% csrf_token %}
+
+<h1>Menu</h1>
+
+<table>
+<tr>
+    <th>name</th>
+    <th>price</th>
+    <th>gramms</th>
+    <th>cals</th>
+</tr>
+    {% for q in all %}
+<tr>
+    <td>{{ q.name }}</td>
+    <td>{{ q.price }}</td>
+    <td>{{ q.gramms }}</td>
+    <td>{{ q.cals }}</td>
+</tr>
+
+{% endfor %}
+</table>
+
+{% endblock %}
