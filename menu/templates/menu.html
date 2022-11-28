@@ -11,16 +11,14 @@
 {% comment %} а тут навбар или сайд бар, но у нас нет разделения по разделам {% endcomment %}
 {% comment %} тут должна быть пикча которую пользователь ебашит из админки {% endcomment %}
 
-
-
-<div class="col-lg-10 mx-auto col-12 text-center mb-3">
-    <h1 class="mt-0 text-primary">Our Menu</h1>
+{% comment %} <div class="col-lg-10 mx-auto col-12 text-center mb-3 w-100 h-100 bg-danger"> {% endcomment %}
+<div class="text-center w-100 h-100 bg-secondary">
+    <h1 class="mt-0 text-black-50">Our Menu</h1>
     <p class="lead">Begin with a selection from our award winning beverage menu or choose a wine from our extensive wine list. Our wine list features over 100 different vintages and has received the chamber of commerce award of excellence.</p>
 </div>
 
 <section class="section-products">
     {% for cat in all_sections %}
-    {% if cat in all_items %}
 
     <div class="container">
             <div class="row justify-content-center text-center">
@@ -58,7 +56,6 @@
             
         </div>
     </div>
-    {% endif %}
     {% endfor %}
 </section>
 
