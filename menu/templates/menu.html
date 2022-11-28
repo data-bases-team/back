@@ -10,28 +10,32 @@
 
 {% comment %} а тут навбар или сайд бар, но у нас нет разделения по разделам {% endcomment %}
 {% comment %} тут должна быть пикча которую пользователь ебашит из админки {% endcomment %}
+
+
+
 <div class="col-lg-10 mx-auto col-12 text-center mb-3">
     <h1 class="mt-0 text-primary">Our Menu</h1>
     <p class="lead">Begin with a selection from our award winning beverage menu or choose a wine from our extensive wine list. Our wine list features over 100 different vintages and has received the chamber of commerce award of excellence.</p>
 </div>
 
 <section class="section-products">
+    {% for cat in all_sections %}
+    {% if cat in all_items %}
 
     <div class="container">
             <div class="row justify-content-center text-center">
                     <div class="col-md-8 col-lg-6">
                             <div class="header">
-                                    <h3>Featured Product</h3>
-                                    <h2>Popular Products</h2>
+                                    <h3>{{ cat.section }}</h3>
                             </div>
                     </div>
             </div>
-            {% for cat in all_sections %}
-            <p>{% cat.sections %}</p>
-            {% endfor %}
+           
+            
             <div class="row">
                     <!-- Single Product -->
                     {% for q in all_items %}
+                    {% if cat.section == q.section.section  %}
                     <div class="col-md-6 col-lg-4 col-xl-3">
                             <div class="single-product">
                                     <div class="part-1 m-3">
@@ -41,17 +45,21 @@
                                             <img src ='{{q.image.url}}' class="card-img-top">
                                             {% endif %}
                                             <p class="small">{{ q.description }}</p>
-                                            <p class="fw-lighter">{{ q.gramms }} {{ q.calories }}</p>
-                                            <span class="float-left font-weight-bold">{{ q.price }} </span>
+                                            <p class="small ">{{ q.gramms }} грамм {{ q.calories }} ккал</p>
+                                            <span class="float-left font-weight-bold">{{ q.price }} руб </span>
                                         </div>
                                     </div>
                             </div>
                     </div>
+                    {% endif %}
                     {% endfor %}
                 </div>
             </div>  
+            
         </div>
     </div>
+    {% endif %}
+    {% endfor %}
 </section>
 
 
@@ -69,7 +77,7 @@
             <hr class="accent my-5">
         </div> {% endcomment %}
 
-    {% for q in all_items %}
+    {% comment %} {% for q in all_items %}
     <div style = "column-count: 2;" class="card-columns">
     <div class="card card-body">
         <h6 class="text-truncate">{{ q.name }}</h6>
@@ -82,9 +90,6 @@
     </div>  
     </div>
 {% comment %} </div> {% endcomment %}
-{% comment %} </div> {% endcomment %}
-    
-
-{% endfor %}
+{% comment %} </div> {% endfor %} {% endcomment %}
 
 {% endblock %}
