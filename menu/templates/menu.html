@@ -6,31 +6,39 @@
 
 {% csrf_token %}
 
-<h1>Menu</h1>
+{% comment %} а тут навбар или сайд бар, но у нас нет разделения по разделам {% endcomment %}
+{% comment %} тут должна быть пикча которую пользователь ебашит из админки {% endcomment %}
+<div class="col-lg-10 mx-auto col-12 text-center mb-3">
+    <h1 class="mt-0 text-primary">Our Menu</h1>
+    <p class="lead">Begin with a selection from our award winning beverage menu or choose a wine from our extensive wine list. Our wine list features over 100 different vintages and has received the chamber of commerce award of excellence.</p>
+</div>
 
-<table>
-<tr>
-    <th>name</th>
-    <th>description</th>
-    <th>price</th>
-    <th>gramms</th>
-    <th>cals</th>
-    <th>image</th>
-</tr>
+<div class="container py-10">
+{% comment %} <div class="card-columns"> {% endcomment %}
+
     {% for q in all_items %}
-<tr>
-    <td>{{ q.name }}</td>
-    <td>{{ q.description }}</td>
-    <td>{{ q.gramms }}</td>
-    <td>{{ q.calories }}</td>
-    <td>{{ q.price }}</td>
-    {% if q.image %}
-    <td><img src ='{{q.image.url}}' width=90></td>
-    {% endif %}
-
-</tr>
+    <div style = "column-count: 2;" class="card-columns">
+    <div class="card card-body">
+    {% comment %} <td>{{ q.name }}</td> {% endcomment %}
+    {% comment %} <td>{{ q.description }}</td> {% endcomment %}
+    {% comment %} <td>{{ q.gramms }}</td>
+    <td>{{ q.calories }}</td> {% endcomment %}
+    {% comment %} <td>{{ q.price }}</td> {% endcomment %}
+        
+       
+        <h6 class="text-truncate">{{ q.name }}</h6>
+        {% if q.image %}
+        <img src ='{{q.image.url}}' class="card-img-top">
+        {% endif %}
+        <p class="small">{{ q.description }}</p>
+        <p class="fw-lighter">{{ q.gramms }} {{ q.calories }}</p>
+        <span class="float-left font-weight-bold">{{ q.price }} </span>
+    </div>  
+    </div>
+{% comment %} </div> {% endcomment %}
+{% comment %} </div> {% endcomment %}
+    
 
 {% endfor %}
-</table>
 
 {% endblock %}
