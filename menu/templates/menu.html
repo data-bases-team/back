@@ -17,7 +17,7 @@
     <th>cals</th>
     <th>image</th>
 </tr>
-    {% for q in all %}
+    {% for q in all_items %}
 <tr>
     <td>{{ q.name }}</td>
     <td>{{ q.description }}</td>
@@ -25,8 +25,7 @@
     <td>{{ q.calories }}</td>
     <td>{{ q.price }}</td>
     {% if q.image %}
-    <img src ='{{q.image.url}}'
-    width=90>
+    <td><img src ='{{q.image.url}}' width=90></td>
     {% endif %}
 
 </tr>

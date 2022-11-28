@@ -2,6 +2,8 @@ from django.contrib import admin
 from .models import items
 from .models import menuSections
 from django.utils.html import format_html
+from django.contrib.sites.models import Site
+#from django.contrib.redirects.models import Redirect
 
 
 @admin.register(items)
@@ -17,5 +19,6 @@ class itemsAdmin(admin.ModelAdmin):
 
     
 
-
+admin.site.unregister(Site)
+#admin.site.register(Redirect)
 admin.site.register(menuSections)
