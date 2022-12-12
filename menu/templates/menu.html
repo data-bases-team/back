@@ -3,12 +3,11 @@
 {% load crispy_forms_tags %}
 {% csrf_token %}
 
-
 {% comment %} а тут навбар или сайд бар {% endcomment %}
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark" style="background-image: url(../static/images/IMG_6605.JPG);">
   <div class="container">
     {% comment %} name {% endcomment %}
-    <a class="navbar-brand" href="#{{ cat.section }}">Navbar</a>
+    <a class="navbar-brand" href="#{{ cat.section }}">{{design.cafename}}</a>
       <img src="../static/images/IMG_20220121_130712.jpg" width="30" height="30" alt="">
     </a>
       <button class="navbar-toggler ms-auto justify-content-end" type="button" data-bs-toggle="collapse" data-bs-target="#n_bar" aria-controls="navbarNavAltMarkup" aria-label="Toggle navigation">
@@ -28,12 +27,9 @@
 
 {% comment %} тут должна быть пикча которую пользователь ебашит из
 админки {% endcomment %}
-<div class="masthead min-vh-100 min-vw-100">
-  <h1 class="text-center d-flex col-lg-10 mx-auto col-12 text-centermt-0 text-black-50" >Our Menu</h1>
-</div>
 
 
-<section class="section-products" style="background-image: url(../static/images/IMG_6605.JPG);">
+<section class="section-products" style="background-image: url({{design.bg.url}});">
 
   {% for cat in all_sections %}
 
@@ -58,9 +54,6 @@
               {% if q.image %}
               <img src="{{q.image.url}}" class="card-img-top" id="card-image" />
               {% endif %}
-
-              <img src="../static/images/IMG_20220121_130712.jpg" class="card-img-top pb-3" id="card-image" />
-
               <p class="small">{{ q.description }}</p>
               <p class="small">{{ q.gramms }} грамм {{ q.calories }} ккал</p>
               <span class="float-left font-weight-bold">{{ q.price }} руб
@@ -70,6 +63,8 @@
         </div>
       </div>
       {% endif %} {% endfor %}
+    </div>
+</div>
   {% endfor %}
 </section>
 
