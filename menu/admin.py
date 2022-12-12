@@ -24,3 +24,5 @@ admin.site.unregister(Site)
 #admin.site.register(Redirect)
 admin.site.register(menuSections)
 admin.site.register(design)
+admin.site.site_header = 'Administration'
+

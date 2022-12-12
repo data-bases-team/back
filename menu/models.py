@@ -36,3 +36,6 @@ class design(models.Model):
     fontcolor = models.CharField(max_length=50,default=None, blank=True, null=True)
     style = models.BooleanField()
 
+    def __str__(self):
+        return self.cafename
+
