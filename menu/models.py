@@ -27,3 +27,11 @@ class items(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class design(models.Model):
+    bg = models.ImageField(null=True, blank=True, upload_to='images/')
+    font = models.TextField(max_length=350, default=None, blank=True, null=True)
+    fontcolor = models.CharField(max_length=50)
+    style = models.BooleanField()
+
