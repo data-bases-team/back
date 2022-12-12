@@ -30,8 +30,9 @@ class items(models.Model):
 
 
 class design(models.Model):
+    cafename = models.CharField(max_length=50, default='cafe')
     bg = models.ImageField(null=True, blank=True, upload_to='images/')
     font = models.TextField(max_length=350, default=None, blank=True, null=True)
-    fontcolor = models.CharField(max_length=50)
+    fontcolor = models.CharField(max_length=50,default=None, blank=True, null=True)
     style = models.BooleanField()
 
