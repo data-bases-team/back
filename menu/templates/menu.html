@@ -1,28 +1,42 @@
+<!-- prettier-ignore-attribute -->
 {% extends "header.html" %}
 {% block content %}
 {% load crispy_forms_tags %}
-{% csrf_token %}
+{%csrf_token %} {% comment %} а тут навбар или сайд бар {% endcomment %}
 
-{% comment %} а тут навбар или сайд бар {% endcomment %}
-
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark" style="background-image: url(../static/images/IMG_6605.JPG);">
+<nav
+  class="navbar navbar-expand-sm navbar-dark bg-dark"
+  style="background-image: url({{design.bgheader.url}});"
+>
   <div class="container">
     {% comment %} name {% endcomment %}
     <a class="navbar-brand" href="#{{ cat.section }}">{{design.cafename}}</a>
-      <img src="../static/images/IMG_20220121_130712.jpg" width="30" height="30" alt="">
-    </a>
-      <button class="navbar-toggler ms-auto justify-content-end" type="button" data-bs-toggle="collapse" data-bs-target="#n_bar" aria-controls="navbarNavAltMarkup" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-      
-      <div class="collapse navbar-collapse justify-content-end" id="n_bar">
-          <ul class="navbar-nav">
-              {% for cat in all_sections %}
-              <li class="nav-item"><a class="nav-link" href="#">{{ cat.section }}</a></li>
-              {% endfor %}
-              
-          </ul>
-        </div>
+    <img
+      src="../static/images/IMG_20220121_130712.jpg"
+      width="30"
+      height="30"
+      alt=""
+    />
+    <button
+      class="navbar-toggler ms-auto justify-content-end"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#n_bar"
+      aria-controls="navbarNavAltMarkup"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="n_bar">
+      <ul class="navbar-nav">
+        {% for cat in all_sections %}
+        <li class="nav-item">
+          <a class="nav-link" href="#">{{ cat.section }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
   </div>
 </nav>
 
@@ -32,6 +46,10 @@
 
 <section class="section-products" style="background-image: url({{design.bgcenter.url}});">
 
+<section
+  class="section-products"
+  style="background-image: url({{design.bgcenter.url}});"
+>
   {% for cat in all_sections %}
 
   <div class="container">
@@ -48,7 +66,7 @@
       {% for q in all_items %} {% if cat.section == q.section.section %}
 
       <div class="col-md-6 col-lg-4 col-xl-3">
-        <div class="single-product">
+        <div class="single-product opacity-25">
           <div class="part-1 m-3">
             <div class="card card-body my-10">
               <h6 class="text-truncate">{{ q.name }}</h6>
@@ -57,7 +75,8 @@
               {% endif %}
               <p class="small">{{ q.description }}</p>
               <p class="small">{{ q.gramms }} грамм {{ q.calories }} ккал</p>
-              <span class="float-left font-weight-bold">{{ q.price }} руб
+              <span class="float-left font-weight-bold"
+                >{{ q.price }} руб
               </span>
             </div>
           </div>
@@ -65,19 +84,25 @@
       </div>
       {% endif %} {% endfor %}
     </div>
-</div>
+  </div>
   {% endfor %}
 </section>
 
 {% comment %} ugly footer {% endcomment %}
-<footer class="text-white bg-image" style="background-image: url(../static/images/IMG_6605.JPG);">
+<footer
+  class="text-white bg-image"
+  style="background-image: url({{design.bgend.url}});"
+>
   <div class="container p-4">
     <div class="row justify-content-center text-centermt-4">
       <div class="p-3">
         © 2022 Copyright not reserved please help:
-        <a class="text-white" href="https://github.com/data-bases-team">github.com/data-bases-team</a>
+        <a class="text-white" href="https://github.com/data-bases-team"
+          >github.com/data-bases-team</a
+        >
       </div>
+    </div>
+  </div>
 </footer>
-
 
 {% endblock %}

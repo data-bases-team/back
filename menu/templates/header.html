@@ -23,7 +23,56 @@
       crossorigin="anonymous"
     ></script>
     {% comment %} name {% endcomment %}
-    <title>Title</title>
+    <title>{{design.cafename}}</title>
+    <style>
+      * {
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-position: center center;
+        background-size: cover;
+      }
+    </style>
+    {% comment %}
+    <style type="text/css" media="screen, print">
+      @font-face {
+        font-family: "base";
+        src: url("https://fonts.googleapis.com/css2?family=Rubik+Storm&display=swap");
+      }
+      body {
+        font-family: "base";
+      }
+    </style>
+    <style type="text/css">
+      @font-face {
+        font-family: "TT Norms Pro";
+        src: url(" {% static "user/fonts/TTNormsPro-Bold.eot" %} ");
+        src: local("TT Norms Pro Bold"), local("TTNormsPro-Bold"),
+          url("{% static "user/fonts/TTNormsPro-Bold.eot?#iefix" %} ")
+            format("embedded-opentype"),
+          url("{% static "user/fonts/TTNormsPro-Bold.woff2" %}") format("woff2"),
+          url("{% static "user/fonts/TTNormsPro-Bold.ttf" %}")
+            format("truetype");
+        font-weight: bold;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "TT Norms Pro";
+        src: url("{% static "user/fonts/TTNormsPro-Regular.eot" %}");
+        src: local("TT Norms Pro Regular"), local("TTNormsPro-Regular"),
+          url("{% static "user/fonts/TTNormsPro-Regular.eot?#iefix" %}")
+            format("embedded-opentype"),
+          url("{% static "user/fonts/TTNormsPro-Regular.woff2" %}")
+            format("woff2"),
+          url("{% static "user/fonts/TTNormsPro-Regular.woff" %}")
+            format("woff"),
+          url("{% static "user/fonts/TTNormsPro-Regular.ttf" %}")
+            format("truetype");
+        font-weight: normal;
+        font-style: normal;
+      }
+    </style>
+    {% endcomment %}
   </head>
   <body>
     {% block content %} {% endblock %}
