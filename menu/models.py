@@ -31,6 +31,7 @@ class items(models.Model):
 
 class design(models.Model):
     cafename = models.CharField(max_length=50, default='cafe')
+    headertxt = models.TextField(max_length=1000, default=None, blank=True, null=True)
     bgheader = models.ImageField(null=True, blank=True, upload_to='images/')
     bgup = models.ImageField(null=True, blank=True, upload_to='images/')
     bgcenter = models.ImageField(null=True, blank=True, upload_to='images/')
