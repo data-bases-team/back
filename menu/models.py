@@ -11,6 +11,14 @@ class menuSections(models.Model):
     def __str__(self):
         return self.section
 
+class fonts(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=50)
+    font = models.FileField(upload_to='fonts/')
+
+    def __str__(self):
+        return self.name
+
 
 class items(models.Model):
     id = models.AutoField(primary_key=True)
@@ -38,10 +46,15 @@ class design(models.Model):
     bgdown = models.ImageField(null=True, blank=True, upload_to='images/')
     bgpage = models.ImageField(null=True, blank=True, upload_to='images/')
     bgend = models.ImageField(null=True, blank=True, upload_to='images/')
-    font = models.TextField(max_length=350, default=None, blank=True, null=True)
+    font = models.ForeignKey(fonts, blank=True, max_length=50, on_delete=models.CASCADE)
     fontcolor = models.CharField(max_length=50,default=None, blank=True, null=True)
     style = models.BooleanField()
 
     def __str__(self):
         return self.cafename
+
+
+
+
+
 
