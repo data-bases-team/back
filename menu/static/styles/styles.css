@@ -17,6 +17,19 @@ body {
 .masthead {
   min-height: calc(100vh - 50px);
   min-width: 100vw;
+  text-align: center;
+}
+
+.masthead2 {
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+#img {
+  min-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border-style: none;
 }
 
 * {
@@ -24,20 +37,6 @@ body {
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
-}
-
-.masthead {
-  text-align: center;
-}
-
-.mh-header {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.card {
-  background: rgba(51, 170, 51, 1);
 }
 
 .bg-img {
@@ -94,3 +93,5 @@ section {
 .section-header p span {
   color: var(--color-primary);
 }
+
+
