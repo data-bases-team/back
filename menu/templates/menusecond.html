@@ -1,9 +1,9 @@
 <!-- prettier-ignore-attribute -->
 {% extends "header.html" %}
-{% block content2 %} 
 {% load crispy_forms_tags %}
 {% csrf_token %} 
 {% load menu_extras %} 
+{% block content %} 
 
 {% comment %} navigation bar {% endcomment %}
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark" style="background-image: url({{design.bgheader.url}});" id="nav">
@@ -17,17 +17,13 @@
       <div class="collapse navbar-collapse justify-content-end" id="n_bar">
         <ul class="navbar-nav">
 
-          {% for q in all_items %} 
+         
+          
           {% for cat in all_sections %}
-           
-           {% if cat.section == q.section.section%} 
-
           <li class="nav-item">
             <a class="nav-link" href={{ "#"|add:cat.section }}>{{ cat.section }}</a>
           </li>
-          {% endif %}
-          {% endfor %}
-          {% endfor %}
+          {% endfor %} 
         </ul>
       </div>
     </div>
@@ -96,4 +92,7 @@
   </footer>
 
   {% endblock %}
-</appname>
+
+
+
+
