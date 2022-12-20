@@ -25,14 +25,9 @@ body {
   background-position: center center;
   background-size: cover;
 }
+
 .masthead {
-  position: relative;
   text-align: center;
-  color: #fff;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: center center;
-  background-size: cover;
 }
 
 .mh-header {
@@ -40,6 +35,9 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+.card {
+  background: rgba(51, 170, 51, 1);
 }
 
 .bg-img {
@@ -68,10 +66,6 @@ body {
 section {
   overflow: hidden;
   padding: 80px 0;
-}
-
-.section-bg {
-  background-color: #eee;
 }
 
 .section-header {
