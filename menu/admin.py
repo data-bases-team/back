@@ -25,7 +25,7 @@ class designAdmin(admin.ModelAdmin):
     #list_display = ('name', 'description','price','gramms','calories',)
     #ordering = ('section',)
     #search_fields = ('name')
-    fields = (('cafename','headertxt'), ('bgheader', 'bgup', 'bgcenter', 'bgdown', 'bgpage', 'bgend'), ('font','fontcolor'),)
+    fields = (('cafename','headertxt'), ('bgheader', 'bgup', 'bgcenter', 'bgdown', 'bgpage', 'bgend'), ('font','fontcolor'), 'style',)
     #readonly_fields = ('admin_image',) 
 
 admin.site.unregister(Site)

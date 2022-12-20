@@ -11,19 +11,10 @@ class menuSections(models.Model):
     def __str__(self):
         return self.section
 
-class fonts(models.Model):
-    id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=50)
-    font = models.FileField(upload_to='fonts/')
-
-    def __str__(self):
-        return self.name
-
-
 class items(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50)
-    section = models.ForeignKey(menuSections, blank=True, max_length=50, on_delete=models.CASCADE)
+    section = models.ForeignKey(menuSections, blank=True, max_length=50, on_delete=models.CASCADE, default=menuSections.objects.all().last())
     description = models.TextField(max_length=350, default=None, blank=True, null=True)
     price = models.IntegerField()
     gramms = models.IntegerField(default=None, blank=True, null=True)
@@ -32,6 +23,14 @@ class items(models.Model):
     def admin_image(self):
         return '<img src="%s"/>' % self.image
     admin_image.allow_tags = True
+
+    def __str__(self):
+        return self.name
+
+class fonts(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=50)
+    font = models.FileField(upload_to='menu/static/fonts/')
 
     def __str__(self):
         return self.name
@@ -48,7 +47,7 @@ class design(models.Model):
     bgend = models.ImageField(null=True, blank=True, upload_to='images/')
     font = models.ForeignKey(fonts, blank=True, max_length=50, on_delete=models.CASCADE)
     fontcolor = models.CharField(max_length=50,default=None, blank=True, null=True)
-    style = models.BooleanField()
+    style = models.BooleanField(default=False)
 
     def __str__(self):
         return self.cafename
