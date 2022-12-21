@@ -32,6 +32,12 @@ admin.site.unregister(Site)
 #admin.site.register(Redirect)
 admin.site.register(menuSections)
 #admin.site.register(design)
-admin.site.register(fonts)
+#admin.site.register(fonts)
+@admin.register(fonts)
+class fontsAdmin(admin.ModelAdmin):
+    def example(self,obj):
+        return format_html('<img src="{0}"  width="255" />'.format(obj.font.url))
+    readonly_fields = ('example',)
+
 admin.site.site_header = 'Administration'
 

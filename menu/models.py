@@ -14,7 +14,7 @@ class menuSections(models.Model):
 class items(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50)
-    section = models.ForeignKey(menuSections, blank=True, max_length=50, on_delete=models.CASCADE, default=menuSections.objects.all().last())
+    section = models.ForeignKey(menuSections, blank=True, max_length=50, on_delete=models.CASCADE, default=menuSections.objects.all().last().pk)
     description = models.TextField(max_length=350, default=None, blank=True, null=True)
     price = models.IntegerField()
     gramms = models.IntegerField(default=None, blank=True, null=True)
@@ -30,7 +30,11 @@ class items(models.Model):
 class fonts(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50)
+    fontfamily = models.CharField(max_length=50)
     font = models.FileField(upload_to='menu/static/fonts/')
+    def admin_image(self):
+        return '<img src="%s"/>' % self.font
+    admin_image.allow_tags = True
 
     def __str__(self):
         return self.name

@@ -36,92 +36,19 @@
     {% comment %} name {% endcomment %}
     <title>{{design.cafename}}</title>
     <style>
-      * {
-        font-color: {{design.font.color}};
-      }
+
       @import url("https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;1,100&family=Oswald:wght@300;500;700&family=Rubik+Storm&display=swap");
       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700;900&family=Montserrat:wght@100;200;400;600;800;900&family=Roboto+Condensed:wght@300;400;700&family=Roboto+Slab:wght@100;400;500;700;900&family=Rubik+Spray+Paint&family=Ubuntu:wght@300;400;700&family=Unbounded:wght@200;400;500;800;900&display=swap');
-      {% if design.font.id == 1 %}
-      div,
-      a,
-      p,
-      h1,
-      h3,
-      h6 {
-        font-family: 'Inter', sans-serif;
-      }
-      {% endif %}
-      {% if design.font.id == 2 %}
-      div,
-      a,
-      p,
-      h1,
-      h3,
-      h6 {
-        font-family: "Oswald", sans-serif;
-      }
-      {% endif %}
-      {% if design.font.id == 3 %}
-      div,
-      a,
-      p,
-      h1,
-      h3,
-      h6 {
-        font-family: "Rubik Storm", cursive;
-      }
-      {% endif %}
-      {% if design.font.id == 4 %}
-      div,
-      a,
-      p,
-      h1,
-      h3,
-      h6 {
-        font-family: 'Montserrat', sans-serif;
-      }
-      {% endif %}
-      {% if design.font.id == 5 %}
-      div,
-      a,
-      p,
-      h1,
-      h3,
-      h6 {
-        font-family: 'Roboto Condensed', sans-serif;
-      }
-      {% endif %}
-      {% if design.font.id == 6 %}
-      div,
-      a,
-      p,
-      h1,
-      h3,
-      h6 {
-        font-family: 'Roboto Slab', serif;
-      }
-      {% endif %}
-      {% if design.font.id == 7 %}
-      div,
-      a,
-      p,
-      h1,
-      h3,
-      h6 {
-        font-family: 'Rubik Spray Paint', cursive;
-      }
-      {% endif %}
-      {% if design.font.id == 8 %}
-      div,
-      a,
-      p,
-      h1,
-      h3,
-      h6 {
-        font-family: 'Ubuntu', sans-serif;
-      }
-      {% endif %}
 
+      div,
+      a,
+      p,
+      h1,
+      h3,
+      h6 {
+        color:{{design.fontcolor}};
+        font-family: '{{design.font.name}}', {{design.font.fontfamily}};
+      }
     </style>
     {% comment %}
     <style type="text/css" media="screen, print">
