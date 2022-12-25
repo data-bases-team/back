@@ -4,17 +4,17 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-class menuSections(models.Model):
+class menuSection(models.Model):
     id = models.AutoField(primary_key=True)
     section = models.CharField(max_length=50)
  
     def __str__(self):
         return self.section
 
-class items(models.Model):
+class item(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50)
-    section = models.ForeignKey(menuSections, blank=True, max_length=50, on_delete=models.CASCADE, default=menuSections.objects.all().last().pk)
+    section = models.ForeignKey(menuSection, blank=True, max_length=50, on_delete=models.CASCADE, default=menuSection.objects.all().last().pk)
     description = models.TextField(max_length=350, default=None, blank=True, null=True)
     price = models.IntegerField()
     gramms = models.IntegerField(default=None, blank=True, null=True)
@@ -27,7 +27,7 @@ class items(models.Model):
     def __str__(self):
         return self.name
 
-class fonts(models.Model):
+class font(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50)
     fontfamily = models.CharField(max_length=50)
@@ -49,7 +49,7 @@ class design(models.Model):
     bgdown = models.ImageField(null=True, blank=True, upload_to='images/')
     bgpage = models.ImageField(null=True, blank=True, upload_to='images/')
     bgend = models.ImageField(null=True, blank=True, upload_to='images/')
-    font = models.ForeignKey(fonts, blank=True, max_length=50, on_delete=models.CASCADE)
+    font = models.ForeignKey(font, blank=True, max_length=50, on_delete=models.CASCADE)
     fontcolor = models.CharField(max_length=50,default=None, blank=True, null=True)
     style = models.BooleanField(default=False)
 

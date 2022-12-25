@@ -1,16 +1,16 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import items, menuSections, design
+from .models import item, menuSection, design
 
 def show_menu(request):
-    a = set(items.objects.all())
+    a = set(item.objects.all())
     a_sections = set(map(lambda x: x.section.id, a))
     
-    sections = menuSections.objects.filter(id__in=a_sections)
+    sections = menuSection.objects.filter(id=3)
 
     #1 in sections
 
-    menu_positions = items.objects.all()
+    menu_positions = item.objects.all()
     # not_empty_sections = items.all().menusections_set.all()
     # for i in items.objects.count():
     #     if 

@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'menu',
     'adminmenu',
     'crispy_forms',
-    'django.contrib.redirects',
 
 ]
 SITE_ID = 1
@@ -52,7 +51,6 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
 MIDDLEWARE = [
-    'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
