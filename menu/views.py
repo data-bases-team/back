@@ -6,7 +6,7 @@ def show_menu(request):
     a = set(item.objects.all())
     a_sections = set(map(lambda x: x.section.id, a))
     
-    sections = menuSection.objects.filter(id=3)
+    sections = menuSection.objects.filter(id__in=a_sections)
 
     #1 in sections
 
