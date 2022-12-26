@@ -6,7 +6,7 @@
 {% block content %} 
 
 {% comment %} navigation bar {% endcomment %}
-  <nav class="navbar navbar-expand-sm navbar-dark bg-dark" style="background-image: url({{design.bgheader.url}});" id="nav">
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark" style="background-image: url({{design.bgheader.url}}); " id="nav">
     <div class="container">
       <a class="navbar-brand" href="#nav">{{design.cafename}}</a>
       <button class="navbar-toggler ms-auto justify-content-end" type="button" data-bs-toggle="collapse"
@@ -38,10 +38,12 @@
   </div> {% endcomment %}
 
 {% comment %} page {% endcomment %}
-<img src = "{{design.bgup.url}}" id="img" width="100%" height="auto"/>
+<div style = "margin-top: -1px;">
+  <img src = "{{design.bgup.url}}" id="img" width="100%" height="auto"/> 
+</div>
 
 
-  <section class="section-products" style="background-image: url({{design.bgpage.url}});  background-repeat: no-repeat round; background-attachment: local, scroll; background-size: 100%;">
+  <section class="section-products block-page" style="background-image: url({{design.bgpage.url}});  background-repeat: no-repeat round; background-attachment: local, scroll; background-size: 100%; background-position: top; margin-top: -1px;">
       {% for cat in all_sections %}
 
       <div class="container">
@@ -98,7 +100,10 @@
       {% endfor %}
   </section>
 
+
+<div class = "block-down" style = "margin-top: -1px;">
 <img src = "{{design.bgdown.url}}" id="img" width="100%" height="auto"/>
+</div>
 
   {% comment %} ugly footer {% endcomment %}
   <footer class="text-white bg-image" style="background-image: url({{design.bgend.url}});">
