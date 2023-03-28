@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.staticfiles',
     'menu',
+    'colorfield',
     'adminmenu',
     'crispy_forms',
 

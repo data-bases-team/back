@@ -4,9 +4,12 @@ git clone https://github.com/data-bases-team/back.git
 cd back
 ```
 
+
+
 при необходимости поменять порт в DOCKERFILE и docker-compose.yml
 
 ```
+docker pull docker.io/library/python:3.9   
 sudo docker-compose build
 sudo docker-compose up
 ```
