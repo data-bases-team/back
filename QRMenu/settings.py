@@ -39,10 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.staticfiles',
-    'menu',
-    'colorfield',
-    'adminmenu',
     'crispy_forms',
+    'menu',
 
 ]
 SITE_ID = 1
@@ -66,7 +64,9 @@ ROOT_URLCONF = 'QRMenu.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -77,7 +77,7 @@ TEMPLATES = [
             ],
 
             'libraries':{
-            'menu_extras': 'menu.templatetags.menu_extras',
+            'menu_extras': 'templatetags.menu_extras',
             
             }
         },

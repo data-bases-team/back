@@ -10,11 +10,6 @@ def show_menu(request):
     #1 in sections
 
     menu_positions = item.objects.all()
-    # not_empty_sections = items.all().menusections_set.all()
-    # for i in items.objects.count():
-    #     if 
-    #     not_empty_sections = items.all().menusections_set.all()
-
 
 
     designn  = design.objects.first()

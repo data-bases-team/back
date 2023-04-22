@@ -16,6 +16,9 @@ class menuSection(models.Model):
  
     def __str__(self):
         return self.section
+    class Meta:
+        app_label = 'menu'
+
 
 
 class item(models.Model):

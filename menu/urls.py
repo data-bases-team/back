@@ -1,8 +1,6 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
 
-# URLConf
 urlpatterns = [
     path('', views.show_menu, name='menu'),
-
 ]
