@@ -10,4 +10,4 @@ RUN pip3 install -r req.txt
 
 COPY . /app
 
-EXPOSE 8001
+EXPOSE 8000

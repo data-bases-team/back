@@ -5,8 +5,42 @@ services:
     image: back-master:0.0.1
     build: .
     volumes:
-      - .:/QRMenu
+      - ./app1:/app/db
     ports:
-      - "8001:8001"
+      - "8001:8000"
+    container_name: QRMenu_container
+    command: python manage.py runserver 0.0.0.0:8000
+
+
+  app1:
+    image: back-master:0.0.1
+    build: .
+    volumes:
+      - ./app2:/app/db
+    ports:
+      - "8002:8000"
     #container name: QRMenu_container
-    command: python manage.py runserver 0.0.0.0:8001
+    command: python manage.py runserver 0.0.0.0:8000
+
+
+  app2:
+    image: back-master:0.0.1
+    build: .
+    volumes:
+      - ./app3:/app/db
+    ports:
+      - "8003:8000"
+    #container name: QRMenu_container
+    command: python manage.py runserver 0.0.0.0:8000
+
+  app10:
+    image: back-master:0.0.1
+    build: .
+    volumes:
+      - ./app10:/app/db
+    ports:
+      - "8010:8000"
+    #container name: QRMenu_container
+    command: python manage.py runserver 0.0.0.0:8000
+
+      
