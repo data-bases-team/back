@@ -68,3 +68,15 @@ docker compose logs
 python3 manage.py createsuperuser
 ```
 
+Для нового сайтика нужно прописать новую папку-прокси в nginx:
+```
+location /menu/static {
+        proxy_pass http://localhost:8000/menu/static;
+}
+location /menu/images {
+        proxy_pass http://localhost:8000/menu/images;
+}
+location /menu {
+        proxy_pass http://localhost:8000/;
+}
+``` 
