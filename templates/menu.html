@@ -5,7 +5,12 @@
 {% load static %}
 {% block content %} 
 
+{% if design.bgheader %}
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark" style="background-image: url({{design.bgheader.url}}); " id="nav">
+{% else %}
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark" style="background-image: url({% static "Unknown.png" %}); " id="nav">
+{% endif %}
+
     <div class="container">
       <a class="navbar-brand" href="#nav">{{design.cafename}}</a>
       <button class="navbar-toggler ms-auto justify-content-end" type="button" data-bs-toggle="collapse"
