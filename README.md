@@ -62,3 +62,9 @@ docker compose exec <str> bash
 ```
 docker compose logs
 ```
+
+Чтобы создать нового пользователя (при необходимости использовать совместно с `docker compose exec`):
+```
+python3 manage.py createsuperuser
+```
+

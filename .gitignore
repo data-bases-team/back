@@ -1,3 +1,3 @@
 images/*
-*/__pycache_/*
+*.pyc
 venv/*
