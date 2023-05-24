@@ -41,8 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'crispy_forms',
     'menu',
-
 ]
+
 SITE_ID = 1
 CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000']
 
@@ -86,7 +86,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'QRMenu.wsgi.application'
 
-
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
@@ -132,10 +134,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
+STATIC_ROOT = ''
 
-MEDIA_URL = '/media/'
-MEDIA_URL = os.path.join(BASE_DIR, 'media/')
+
+MEDIA_URL = '/images/'
+#MEDIA_URL = os.path.join(BASE_DIR, 'images/')
 
 
 

@@ -49,6 +49,12 @@
         color:{{design.fontcolor}};
         font-family: '{{design.font.name}}', {{design.font.fontfamily}};
       }
+
+      {% comment %} .section-products {
+        background-image: url("{% static "styles/Unknown.png" %}"); 
+      } {% endcomment %}
+
+
     </style>
     {% comment %}
     <style type="text/css" media="screen, print">
@@ -72,6 +78,9 @@
             format("truetype");
         font-weight: bold;
         font-style: normal;
+      }
+      .section-products {
+        background-image: url("{% static "/images/Unknown.png" %}"); 
       }
 
       @font-face {

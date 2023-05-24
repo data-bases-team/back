@@ -11,4 +11,4 @@ urlpatterns = [
     path('menu/', include('menu.urls')),
     path('', include('menu.urls')),
     #path('', views.show_menu, name='menu'),
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

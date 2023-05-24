@@ -2,7 +2,9 @@
 {% load crispy_forms_tags %}
 {% csrf_token %} 
 {% load menu_extras %} 
+{% load static %} 
 {% block content %} 
+
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark" style="background-image: url({{design.bgheader.url}}); " id="nav">
     <div class="container">
       <a class="navbar-brand" href="#nav">{{design.cafename}}</a>
@@ -26,7 +28,7 @@
   {% if design.bgcenter %}
     <section class="section-products block-page" style="background-image: url({{design.bgcenter.url}}); background-repeat: no-repeat round; background-attachment: local, scroll; background-size: 100%; background-position: top; margin-top: -1px;">
   {% else %}
-    <section class="section-products block-page" style="margin-top: -1px;"></section>
+    <section class="section-products block-page" style="background-image: url({% static "Unknown.png" %}); background-repeat: no-repeat round; background-attachment: local, scroll; background-size: 100%; background-position: top; margin-top: -1px;">
   {% endif %}
     {% for cat in all_sections %}
       <div class="container">
@@ -45,7 +47,9 @@
                   <div class="part-1 m-3">
                     <div class="card card-body bg-transparent my-auto" style="border: 1px solid {{design.fontcolor}};">
                       <h6 class="text-truncate" style="font-weight:600;">{{ q.name }}</h6>
-                      {% if q.image %}<img src="{{q.image.url}}" class="card-img-top" id="card-image"/>{% endif %}
+                      {% if q.image %}<img src="{{q.image.url}}" class="card-img-top" id="card-image"/>
+                      {% else %}<img url({% static "Unknown.png" %}) class="card-img-top" id="card-image"/>
+                      {% endif %}
                       <p class="small">{{ q.description }}</p>
                       {% if q.gramms %}<p class="small">{{ q.gramms }} грамм</p>{% endif %}
                       {% if q.calories %}<p class="small">{{ q.calories }} ккал</p>{% endif %}
