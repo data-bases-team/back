@@ -1,3 +1,5 @@
 images/*
-*.pyc
+**/*.pyc
 venv/*
+**/*.sqlite3
+.gitignore
