@@ -5,7 +5,12 @@
 {% load static %} 
 {% block content %} 
 
+  
+  {% if design.bgheader %}
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark" style="background-image: url({{design.bgheader.url}}); " id="nav">
+    {% else %}
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark" style="background-image: url({% static "Unknown.png" %});" id="nav">
+      {% endif %}
     <div class="container">
       <a class="navbar-brand" href="#nav">{{design.cafename}}</a>
       <button class="navbar-toggler ms-auto justify-content-end" type="button" data-bs-toggle="collapse"
@@ -24,6 +29,8 @@
 
   {% if design.bgup %}
     <div style="margin-top: -1px;"><img src="{{design.bgup.url}}" id="img" width="100%" height="auto"/></div>
+  {% else %}
+  <div style="margin-top: -1px;"><img src="{% static "Unknown.png" %}" id="img" width="100%" height="auto"/></div>
   {% endif %}
   {% if design.bgcenter %}
     <section class="section-products block-page" style="background-image: url({{design.bgcenter.url}}); background-repeat: no-repeat round; background-attachment: local, scroll; background-size: 100%; background-position: top; margin-top: -1px;">
@@ -48,7 +55,7 @@
                     <div class="card card-body bg-transparent my-auto" style="border: 1px solid {{design.fontcolor}};">
                       <h6 class="text-truncate" style="font-weight:600;">{{ q.name }}</h6>
                       {% if q.image %}<img src="{{q.image.url}}" class="card-img-top" id="card-image"/>
-                      {% else %}<img url({% static "Unknown.png" %}) class="card-img-top" id="card-image"/>
+                      {% else %}<img src="{% static "Unknown.png" %}" class="card-img-top" id="card-image"/>
                       {% endif %}
                       <p class="small">{{ q.description }}</p>
                       {% if q.gramms %}<p class="small">{{ q.gramms }} грамм</p>{% endif %}
@@ -66,11 +73,14 @@
   </section>
   {% if design.bgdown %}
     <div class="block-down" style="margin-top: -1px;"><img src="{{design.bgdown.url}}" id="img" width="100%" height="auto"/></div>
-  {% endif %}
+    {% else %}
+    <div class="block-down" style="margin-top: -1px;"><img src="{% static "Unknown.png" %}" id="img" width="100%" height="auto"/></div>
+  
+    {% endif %}
   {% if design.bgend %}
     <footer class="text-white bg-image" style="background-image: url({{design.bgend.url}});">
   {% else %}
-    <footer class="text-white bg-image" style="">
+    <footer class="text-white bg-image" style="background-image: url({% static "Unknown.png" %});">
   {% endif %}
     <div class="container p-4">
       <div class="row justify-content-center text-centermt-4">
