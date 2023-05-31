@@ -80,7 +80,7 @@
   {% if design.bgend %}
     <footer class="text-white bg-image" style="background-image: url({{design.bgend.url}});">
   {% else %}
-    <footer class="text-white bg-image" style="">
+    <footer class="text-white bg-image" style="background-image: url({% static "Unknown.png" %});">
   {% endif %}
     <div class="container p-4">
       <div class="row justify-content-center text-centermt-4">
