@@ -4,7 +4,9 @@ from .models import item, menuSection, design
 
 def show_menu(request):
     a = set(item.objects.all())
-    a_sections = set(map(lambda x: x.section.id, a))
+    a_sections = set(map(lambda x: x.section.id if x.status=='a' else -1, a))
+    if -1 in a_sections:
+        a_sections.remove(-1)
     sections = menuSection.objects.filter(id__in=a_sections)
 
     #1 in sections
