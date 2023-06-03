@@ -134,20 +134,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-MEDIA_URL = '/to_edit/images/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
-
-# MEDIA_URL = '/to_edit/images/'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
-
-# LOGIN_URL = '/to_edit/admin/login/' # !!! DONE
-# LOGIN_REDIRECT_URL = '/to_edit/admin/' # !!! DONE
-
-#MEDIA_URL = os.path.join(BASE_DIR, 'images/')
-
+#### DO NOT TOUCH!!!
+STATIC_URL = '/static/'                         ##############    не трогать    #####
+MEDIA_URL = '/to_edit/images/'                  ##############  больше никогда  #####
+MEDIA_ROOT = os.path.join(BASE_DIR, 'images')   ############## тут всё работает #####
+####
 
 
 # Default primary key field type
@@ -155,9 +147,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-
 USE_X_FORWARDED_HOST = True
-#FORCE_SCRIPT_NAME = ''
-#print(BASE_DIR)
 FORCE_SCRIPT_NAME = "/to_edit"

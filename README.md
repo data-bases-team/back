@@ -68,21 +68,14 @@ docker compose logs
 python3 manage.py createsuperuser
 ```
 
-Для нового сайтика нужно прописать новую папку-прокси в nginx:
-```
-location /menu/static {
-        proxy_pass http://localhost:8000/menu/static;
-}
-location /menu/images {
-        proxy_pass http://localhost:8000/menu/images;
-}
-location /menu {
-        proxy_pass http://localhost:8000/;
-}
-``` 
-
-Для создания нового контейнера можно испольщзрвать скрипт:
+Для создания нового контейнера можно использовать скрипт:
 ```
 ./new_container.sh app_name
-sudo service nginx 
+sudo service nginx restart
+./docker_compose.sh
 ```
+
+TODO:
+1. Пофиксить доступ к images из контейнеров.
+2. Сделать, чтобы `sudo service nginx restart` запускалась автоматически.
+
