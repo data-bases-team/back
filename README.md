@@ -80,3 +80,9 @@ location /menu {
         proxy_pass http://localhost:8000/;
 }
 ``` 
+
+Для создания нового контейнера можно испольщзрвать скрипт:
+```
+./new_container.sh app_name
+sudo service nginx 
+```

@@ -44,7 +44,7 @@ INSTALLED_APPS = [
 ]
 
 SITE_ID = 1
-CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000']
+CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000', 'http://194.36.161.123:9980']
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -86,9 +86,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'QRMenu.wsgi.application'
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static')
+# ]
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
@@ -134,10 +134,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'menu/static/'
-STATIC_ROOT = ''
+STATIC_URL = '/static/'
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-MEDIA_URL = 'menu/'
+MEDIA_URL = '/to_edit/images/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
+
+# MEDIA_URL = '/to_edit/images/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
+
+# LOGIN_URL = '/to_edit/admin/login/' # !!! DONE
+# LOGIN_REDIRECT_URL = '/to_edit/admin/' # !!! DONE
+
 #MEDIA_URL = os.path.join(BASE_DIR, 'images/')
 
 
@@ -146,3 +154,10 @@ MEDIA_URL = 'menu/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+USE_X_FORWARDED_HOST = True
+#FORCE_SCRIPT_NAME = ''
+#print(BASE_DIR)
+FORCE_SCRIPT_NAME = "/to_edit"
