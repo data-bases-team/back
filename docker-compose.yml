@@ -1,24 +1,4 @@
 version: "3.8"
 
 services:
-  app1:
-    image: back-master:0.0.1
-    build: .
-    volumes:
-      - ./app1:/app/db
-      - ./app1:/app/images
-    ports:
-      - "8001:8000"
-    container_name: app1
-    command: ./runserver.sh app1
-  app3:
-    image: back-master:0.0.1
-    build: .
-    volumes:
-      - ./app3:/app/db
-      - ./app3:/app/images
-    ports:
-      - "47672:8000"
-    container_name: app3
-    command: ./runserver.sh app3
 

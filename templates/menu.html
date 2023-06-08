@@ -8,7 +8,7 @@
 {% if design.bgheader %}
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark" style="background-image: url({{design.bgheader.url}}); " id="nav">
 {% else %}
-  <nav class="navbar navbar-expand-sm navbar-dark bg-dark" style="background-image: url({% static "Unknown.png" %}); " id="nav">
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark" id="nav">
 {% endif %}
 
     <div class="container">
@@ -30,12 +30,12 @@
   {% if design.bgup %}
     <div style="margin-top: -1px;"><img src="{{design.bgup.url}}" id="img" width="100%" height="auto"/></div>
   {% else %}
-  <div style="margin-top: -1px;"><img src="{% static "Unknown.png" %}" id="img" width="100%" height="auto"/></div>
+  <div style="margin-top: -1px;"><img src="{% static "bgup.png" %}" id="img" width="100%" height="auto"/></div>
   {% endif %}
   {% if design.bgcenter %}
     <section class="section-products block-page" style="background-image: url({{design.bgcenter.url}); background-repeat: no-repeat round; background-attachment: local, scroll; background-size: 100%; background-position: top; margin-top: -1px;">
   {% else %}
-    <section class="section-products block-page" style="background-image: url({% static "Unknown.png" %}); background-repeat: no-repeat round; background-attachment: local, scroll; background-size: 100%; background-position: top; margin-top: -1px;">
+    <section class="section-products block-page" style="background-image: url({% static "bgrepeat.png" %}); background-repeat: no-repeat round; background-attachment: local, scroll; background-size: 100%; background-position: top; margin-top: -1px;">
   {% endif %}
     {% for cat in all_sections %}
       <div class="container">
@@ -74,20 +74,20 @@
   {% if design.bgdown %}
     <div class="block-down" style="margin-top: -1px;"><img src="{{design.bgdown.url}}" id="img" width="100%" height="auto"/></div>
     {% else %}
-    <div class="block-down" style="margin-top: -1px;"><img src="{% static "Unknown.png" %}" id="img" width="100%" height="auto"/></div>
+    <div class="block-down" style="margin-top: -1px;"><img src="{% static "bgdown.png" %}" id="img" width="100%" height="auto"/></div>
   
     {% endif %}
   {% if design.bgend %}
     <footer class="text-white bg-image" style="background-image: url({{design.bgend.url}});">
   {% else %}
-    <footer class="text-white bg-image" style="background-image: url({% static "Unknown.png" %});">
+    <footer class="text-white bg-image bg-dark">
   {% endif %}
     <div class="container p-4">
       <div class="row justify-content-center text-centermt-4">
-        <div class="p-3">
+        <div class="p-3 text-white">
           © 2022 The Piano Cafe. All rights reserved.
           <a class="text-white" href="https://github.com/data-bases-team">github.com/data-bases-team</a>
-          <a class="text-white" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://virtual.fn11.bmstu.ru:3007">qr-code</a>
+          <!-- <img class="text-white" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://virtual.fn11.bmstu.ru:3007">qr-code</a> -->
         </div>
       </div>
     </div>
